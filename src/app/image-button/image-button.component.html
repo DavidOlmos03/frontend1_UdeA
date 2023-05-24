@@ -1,0 +1,4 @@
+<button (click)="showImage()">Mostrar/ocultar imagen del producto</button>
+<br>
+<!--<app-product-form></app-product-form>-->
+<img *ngIf="displayImage" [src]="imageURL" alt="Imagen" />

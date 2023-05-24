@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="text-center my-5">Registrar producto</h1>
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="mb-3">
+      <label for="id" class="form-label">ID</label>
+      <input type="number" class="form-control" id="id" name="id" [(ngModel)]="product.id" required>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="product.name" required>
+    </div>
+    <!--<div class="mb-3">
+      <label for="description" class="form-label">Descripción</label>
+      <input type="text" class="form-control" id="description" name="description" [(ngModel)]="product.description" required>
+    </div>-->
+    <div class="mb-3">
+      <label for="price" class="form-label">Precio</label>
+      <input type="number" class="form-control" id="price" name="price" [(ngModel)]="product.price" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!productForm.form.valid">Registrar producto</button>
+      <!--Este es el boton a editar para que al darle click aparezca una imagen, según el id ingresado-->
+     <!--SE ESTA MOSTRANDO SIEMPRE 1.png-->
+   
+      <img *ngIf="product.imageURL" [src]="product.imageURL" alt="Imagen" />
+      <app-image-button></app-image-button> 
+
+<!--
+    <app-product-form (formSubmit)="submitForm()"></app-product-form>
+    
+
+     -->
+     <app-view [formData]="formData"></app-view>
+    <!--
+      <ul>
+        <h1 class="text-center my-5">VER PRODUCTO</h1>
+        <app-image-button [dato] = "dato"></app-image-button> 
+    </ul>
+
+    -->
+    
+    
+    
+    
+    
+  </form>
+</div>
